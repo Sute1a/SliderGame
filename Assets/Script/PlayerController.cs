@@ -17,15 +17,25 @@ public class PlayerController : MonoBehaviour
     [Header("加速速度")]
     public float accelerationSpeed;
 
+    [Header("ジャンプ力")]
+    public float jumpPower;
+
     [SerializeField]
     private PhysicMaterial pmNoFriction;
 
+    [SerializeField, Header("地面判定プレイヤー")]
+    private LayerMask groundLayer;
+
+    [SerializeField, Header("斜面との接地判定")]
+    private bool isGrounded;
+
+
     void Start()
     {
-        rb = GetComponent<Rigidbody>();  
+        rb = GetComponent<Rigidbody>();
     }
 
-    
+
     void FixedUpdate()
     {
         Move();
@@ -65,7 +75,15 @@ public class PlayerController : MonoBehaviour
                 rb.isKinematic = true;
             }
         }
+
+        CheckGround();
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded == true)
+        {
+            Jump();
+        }
     }
+
     /// <summary>
     /// ブレーキ
     /// </summary>
@@ -73,7 +91,7 @@ public class PlayerController : MonoBehaviour
     {
         float vertical = Input.GetAxis("Vertical");
 
-        if(vertical<0)
+        if (vertical < 0)
         {
             pmNoFriction.dynamicFriction += Time.deltaTime;
 
@@ -92,7 +110,7 @@ public class PlayerController : MonoBehaviour
     {
         float vertical = Input.GetAxis("Vertical");
 
-        if(vertical>0)
+        if (vertical > 0)
         {
             rb.velocity = new Vector3(rb.velocity.x,
                 rb.velocity.y, accelerationSpeed);
@@ -109,5 +127,21 @@ public class PlayerController : MonoBehaviour
 
             Debug.Log(isGoal);
         }
+    }
+    /// <summary>
+    /// ジャンプ
+    /// </summary>
+    private void Jump()
+    {
+        rb.AddForce(transform.up * jumpPower);
+    }
+
+    private void CheckGround()
+    {
+        isGrounded = Physics.Linecast(transform.position,
+            transform.position - transform.up * 0.3f, groundLayer);
+
+        Debug.DrawLine(transform.position,
+            transform.position - transform.up * 0.3f, Color.red);
     }
 }
