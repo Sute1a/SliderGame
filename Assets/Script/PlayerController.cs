@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     private float coefficient = 0.985f;
     private float stopValue = 2.5f;
 
+    private Animator anim;
+
     [Header("移動速度")]
     public float moveSpeed;
 
@@ -33,6 +35,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        anim = GetComponent<Animator>();
     }
 
 
@@ -134,6 +138,8 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {
         rb.AddForce(transform.up * jumpPower);
+
+        anim.SetTrigger("jump");
     }
 
     private void CheckGround()
