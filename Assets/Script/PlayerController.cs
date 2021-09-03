@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
 
     private Animator anim;
 
+    private int score;
+
     [Header("移動速度")]
     public float moveSpeed;
 
@@ -149,5 +151,16 @@ public class PlayerController : MonoBehaviour
 
         Debug.DrawLine(transform.position,
             transform.position - transform.up * 0.3f, Color.red);
+    }
+
+    /// <summary>
+    /// スコア加算
+    /// </summary>
+    /// <param name="amount"></param>
+    public void AddScore(int amount)
+    {
+        score += amount;
+
+        Debug.Log("現在の得点：" + score);
     }
 }
