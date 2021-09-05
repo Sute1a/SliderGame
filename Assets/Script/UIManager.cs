@@ -8,6 +8,9 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Text txtScore;
 
+    [SerializeField]
+    private Text txtTime;
+
     /// <summary>
     /// スコアの表示更新
     /// </summary>
@@ -16,4 +19,13 @@ public class UIManager : MonoBehaviour
     {
         txtScore.text = score.ToString();
     }
+    /// <summary>
+    ///  
+    /// </summary>
+    /// <param name="time"></param>
+    public void UpdateDisplayGameTime(int time)
+    {
+        txtTime.text = time.ToString();
+    }
+
 }
