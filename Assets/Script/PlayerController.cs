@@ -33,6 +33,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Header("斜面との接地判定")]
     private bool isGrounded;
 
+    [SerializeField]
+    private UIManager uiManager;
 
     void Start()
     {
@@ -162,5 +164,7 @@ public class PlayerController : MonoBehaviour
         score += amount;
 
         Debug.Log("現在の得点：" + score);
+
+        uiManager.UpdateDisplayScore(score);
     }
 }
