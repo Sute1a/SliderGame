@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField]
+    private UIManager uiManager;
+
+    [Header("ゲーム時間")]
+    public int gameTime;
+
+    private float timeCounter;
+
     void Start()
     {
-        
+        uiManager.UpdateDisplayGameTime(gameTime);  
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        timeCounter += Time.deltaTime;
+
+        if (timeCounter >= 1.0f)
+        {
+            timeCounter = 0;
+
+            gameTime--;
+
+            if(gameTime<=0)
+            {
+                gameTime = 0;
+            }
+            uiManager.UpdateDisplayGameTime(gameTime);
+        }
     }
 }
