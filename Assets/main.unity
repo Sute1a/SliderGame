@@ -6519,46 +6519,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3577320255808831993, guid: 2d04d23d282c34021ba7f6a322f6d0f2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 3577320255808831993, guid: 2d04d23d282c34021ba7f6a322f6d0f2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3577320255808831993, guid: 2d04d23d282c34021ba7f6a322f6d0f2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 3577320255808831995, guid: 2d04d23d282c34021ba7f6a322f6d0f2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3577320255808831995, guid: 2d04d23d282c34021ba7f6a322f6d0f2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3577320255808831995, guid: 2d04d23d282c34021ba7f6a322f6d0f2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 6.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 3577320255808831999, guid: 2d04d23d282c34021ba7f6a322f6d0f2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.98
-      objectReference: {fileID: 0}
-    - target: {fileID: 3577320255808831999, guid: 2d04d23d282c34021ba7f6a322f6d0f2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3577320255808831999, guid: 2d04d23d282c34021ba7f6a322f6d0f2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 3577320255809068446, guid: 2d04d23d282c34021ba7f6a322f6d0f2, type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3577320255809068451, guid: 2d04d23d282c34021ba7f6a322f6d0f2, type: 3}
       propertyPath: m_Name
       value: Mole
